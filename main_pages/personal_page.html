@@ -1,85 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
-
+  
     <title>Personal Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <head>
-    <link rel="stylesheet" type="text/css" href="../../static/style.css">
-
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    
   </head>
 
   </head>
   <body>
-
-
+    
+    
   <div class="container-main">
   <!-- <div id="loading-animation" style="display: none;"><div class="loading-text">Don't close a page! When task will be over, you download a result excel file</div><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div> -->
-
-
+  
+  
 
   <h1>Welcome, suuny3!</h1>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   <div>
       <h1>Your telegram and twitter parsing settings</h1>
       <ul>
-
-         <div>
-             <form action="/personal_page" method="POST">
-                 <input type="hidden" name="delete_all_settings">
-                 <button type="submit">Clear all settings</button>
-             </form>
-         </div>
-
-
-         <li>
-
-
-                    <div>
-                        Url: PostdocPhd
-                    </div>
-
-
-
-                    <div>
-                        Keywords: Funded
-                    </div>
-
-
-
-                    <div>
-                        Source: twitter
-                    </div>
-
-
-
-
-
-
-            <div>
-               <form action="/personal_page" name="delete_url", method="POST">
-                  <input type="hidden" name="delete_setting_string" value="PostdocPhd">
-                  <input type="hidden" name="parse_type" value="parse_keywords">
-                  <button type="submit">Delete</button>
-               </form>
-            </div>
-            <!--  <form action="/delete" method="post" name="delete-group">
-               <button type="submit">Delete</button>
-               </form> -->
-         </li>
-
+         
+            <p>No saved settings found.</p>
+         
+         
       </ul>
   </div>
   <form method="POST">
-     <input id="csrf_token" name="csrf_token" type="hidden" value="Ijg3NzQ3NmQyODVkNzk2NjJjNzBlMGJhODQ5YzdiM2ZlYTc2YWE1YTQi.ZHw46A.7Vv4CLftru_quL4J8sBB_v2penQ">
+     <input id="csrf_token" name="csrf_token" type="hidden" value="IjIxODcwZWRmMmM3NjQ1YmU2ZWRlOTEzMWY2MTIxNjk0Y2ZhZDJhMDUi.ZH9ZzA.hzw7i1zNcUzFWmZhMfbW2GjUaQQ">
      <div>
          <h2>Add a url for parsing</h2>
          <p>With this form you can add public pages from available social platforms (telegram and twitter), which you want to parse</p>
      </div>
      <input id="parse_type" name="parse_type" type="hidden" value="parse_keywords">
-<input id="csrf_token" name="csrf_token" type="hidden" value="Ijg3NzQ3NmQyODVkNzk2NjJjNzBlMGJhODQ5YzdiM2ZlYTc2YWE1YTQi.ZHw46A.7Vv4CLftru_quL4J8sBB_v2penQ">
+<input id="csrf_token" name="csrf_token" type="hidden" value="IjIxODcwZWRmMmM3NjQ1YmU2ZWRlOTEzMWY2MTIxNjk0Y2ZhZDJhMDUi.ZH9ZzA.hzw7i1zNcUzFWmZhMfbW2GjUaQQ">
      <div>
         <label for="available_sources_field">Choose a social media for parsing from menu</label>
         <select id="available_sources_field" name="available_sources_field"><option value="1">telegram</option><option value="2">twitter</option></select>
@@ -87,51 +46,51 @@
      <div>
         <label for="add_url">Add a group url</label>
         <input id="add_url" name="add_url" placeholder="full url or the group/page name" type="text" value="">
-
+        
      </div>
      <div>
         <label for="add_keywords">Add a keywords for this group, or leave this field empty to parse without keywords</label>
         <input id="add_keywords" name="add_keywords" placeholder="keyword1, keyword2" type="text" value="">
-
+        
      </div>
      <div>
         <input id="add_parse_keywords_button" name="add_parse_keywords_button" type="submit" value="Add url">
      </div>
   </form>
-
+  
   <h2>Start parsing</h2>
   <form method="POST" id="parse-form" action="/personal_page">
-    <input id="csrf_token" name="csrf_token" type="hidden" value="Ijg3NzQ3NmQyODVkNzk2NjJjNzBlMGJhODQ5YzdiM2ZlYTc2YWE1YTQi.ZHw46A.7Vv4CLftru_quL4J8sBB_v2penQ">
-    <input id="csrf_token" name="csrf_token" type="hidden" value="Ijg3NzQ3NmQyODVkNzk2NjJjNzBlMGJhODQ5YzdiM2ZlYTc2YWE1YTQi.ZHw46A.7Vv4CLftru_quL4J8sBB_v2penQ">
+    <input id="csrf_token" name="csrf_token" type="hidden" value="IjIxODcwZWRmMmM3NjQ1YmU2ZWRlOTEzMWY2MTIxNjk0Y2ZhZDJhMDUi.ZH9ZzA.hzw7i1zNcUzFWmZhMfbW2GjUaQQ">
+    <input id="csrf_token" name="csrf_token" type="hidden" value="IjIxODcwZWRmMmM3NjQ1YmU2ZWRlOTEzMWY2MTIxNjk0Y2ZhZDJhMDUi.ZH9ZzA.hzw7i1zNcUzFWmZhMfbW2GjUaQQ">
     <div>
         <label for="select_parse_type">Select which type of a parse ypu need</label>
         <ul id="select_parse_type"><li><input checked id="select_parse_type-0" name="select_parse_type" type="radio" value="days_select"> <label for="select_parse_type-0">Select days from today&#39;s day to parse</label></li><li><input id="select_parse_type-1" name="select_parse_type" type="radio" value="time_select"> <label for="select_parse_type-1">Select a time period to parse</label></li></ul>
-
+        
     </div>
     <div id="period_in_days">
         <p>Select number of days to parse from date now</p>
         <label for="parse_days">How many days from today&#39;s date to parse</label>
         <input id="parse_days" name="parse_days" type="number" value="">
-
+        
     </div>
     <div id="period_in_dates">
         <p>Select time period</p>
         <label for="begin_date">Start Date</label>
         <input id="begin_date" name="begin_date" type="date" value="">
-
+        
         <label for="end_date">End Date</label>
         <input id="end_date" name="end_date" type="date" value="">
-
+        
     </div>
  <!--   <div>
         <label for="include_comments">Include comments?</label>
         <input id="include_comments" name="include_comments" type="checkbox" value="y">
-
+         
     </div> -->
     <div>
         <label for="parse_limit">Max number of the posts in result (optional)</label>
         <input id="parse_limit" name="parse_limit" type="number" value="">
-
+        
     </div>
     <div>
         <input id="parse-button" name="parse_button" type="submit" value="Parse">
@@ -141,7 +100,7 @@
      <button type="submit">Parse now</button>
      </form> -->
   <a href="/logout">Logout</a>
-
+  
   </div>
   <div id="loading-container" style="display: none;">
      <div class="loading-text">
@@ -151,7 +110,7 @@
         <div class="lds-facebook">
            <div></div>
            <div></div>
-           <div></div>
+           <div></div> 
         </div>
      </div>
   </div>
@@ -165,11 +124,11 @@
        loadingAnimation.style.display = 'flex';
        mainContainer.style.opacity = "0.3";
      });
-
+      
      function toggleOtherField() {
          var radioField_inp_0 = document.getElementById('select_parse_type-0');
          var radioField_inp_1 = document.getElementById('select_parse_type-1');
-
+         
          var days_period = document.getElementById('period_in_days')
          var date_period = document.getElementById('period_in_dates')
 
@@ -178,23 +137,23 @@
          } else {
            days_period.style.display = 'none';
          }
-
+         
          if (radioField_inp_1.checked) {
            date_period.style.display = 'block';
          } else {
            date_period.style.display = 'none';
          }
      }
-
+     
      toggleOtherField();
      // Add event listener to the radio field
      var radioField = document.getElementById('select_parse_type');
-     radioField.addEventListener('change', toggleOtherField);
+     radioField.addEventListener('change', toggleOtherField); 
   </script>
 
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
 </html>
